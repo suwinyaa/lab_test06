@@ -6,9 +6,9 @@ workflows:
   my-workflow:
     jobs:
       - build-and-test:
-        context:
-          - lab_test06
-          
+          context:
+            - lab_test06
+
 jobs:
   build-and-test:
     docker:
@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Create ENV
           command: env > .env
-      - run: echo${USER_NAME}
+      - run: echo ${USER_NAME}
       - run:
           name: Run tests
           command: python -m pytest
